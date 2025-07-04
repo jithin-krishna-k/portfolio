@@ -5,8 +5,10 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Mail, Download, Code2, Database, User } from "lucide-react"
 import Image from "next/image"
+import { useMediaQuery } from "@/lib/useMediaQuery"
 
 export function About() {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   const scrollToAbout = () => {
     const element = document.querySelector("#contact")
     if (element) {
@@ -64,7 +66,7 @@ export function About() {
 
                   <div className="absolute -top-4 -left-4 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-600 rounded-xl p-3 shadow-lg pulse-glow">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-gray-800 dark:text-gray-200">15+</div>
+                      <div className={`text-2xl font-bold text-gray-800 dark:text-gray-200`}>15+</div>
                       <div className="text-xs text-gray-600 dark:text-gray-400">Projects</div>
                     </div>
                   </div>
@@ -84,7 +86,7 @@ export function About() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="flex items-center space-x-3 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-700 hover:shadow-md transition-all duration-300">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                      <div className={`${isMobile ?"w-10 h-10" :"w-12 h-12"} bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center`}>
                         <Code2 className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -118,9 +120,9 @@ export function About() {
                     <a href="/resume/jithinkrishna.pdf" download>
                       <Button
                         variant="outline"
-                        className="flex-1 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 bg-transparent"
+                        className="flex-1 w-full border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 bg-transparent"
                       >
-                        <Download className="w-4 h-4 mr-2" />
+                        <Download className={"w-4 h-4 mr-2"} />
                         Download CV
                       </Button>
                     </a>

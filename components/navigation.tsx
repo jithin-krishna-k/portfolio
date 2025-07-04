@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 
-
 export function Navigation() {
   const [mounted, setMounted] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
@@ -52,27 +51,26 @@ export function Navigation() {
 
   if (!mounted) return null
 
-return (
-  <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 
-    bg-white/20 dark:bg-gray-800/30 backdrop-blur-lg 
-    border border-white/30 dark:border-gray-700 
-    rounded-full shadow-lg z-50 px-4 py-1">
-    <div className="flex items-center space-x-1">
-      {navItems.map((item) => (
-        <button
-          key={item.href}
-          onClick={() => scrollToSection(item.href)}
-          className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-            activeSection === item.href.substring(1)
-              ? "text-white bg-blue-600 dark:bg-blue-500 shadow-md"
-              : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white/10 dark:hover:bg-gray-700/30"
-          }`}
-        >
-          {item.label}
-        </button>
-      ))}
-    </div>
-  </nav>
-)
-
+  return (
+    <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 
+      bg-white/20 dark:bg-gray-800/30 backdrop-blur-lg 
+      border border-white/30 dark:border-gray-700 
+      rounded-full shadow-lg z-50 px-4 py-1 w-max max-w-[90vw]">
+      <div className="flex items-center overflow-x-auto scrollbar-hide space-x-1 sm:space-x-2 md:space-x-4">
+        {navItems.map((item) => (
+          <button
+            key={item.href}
+            onClick={() => scrollToSection(item.href)}
+            className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap ${
+              activeSection === item.href.substring(1)
+                ? "text-white bg-blue-600 dark:bg-blue-500 shadow-md"
+                : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white/10 dark:hover:bg-gray-700/30"
+            }`}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
+    </nav>
+  )
 }

@@ -2,8 +2,10 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import styled from 'styled-components';
 import { useTheme } from "next-themes"
+import { useMediaQuery } from '@/lib/useMediaQuery';
 
 const ThemeToggle = () => {
+    const isMobile = useMediaQuery("(max-width: 768px)");
     const { setTheme, resolvedTheme } = useTheme();
     const [isDark, setIsDark] = useState(false);
 
@@ -21,7 +23,7 @@ const ThemeToggle = () => {
 
 
     return (
-        <StyledWrapper>
+        <StyledWrapper isMobile={isMobile}>
             <label className="theme-switch">
                 <input
                     type="checkbox"
@@ -56,9 +58,9 @@ const ThemeToggle = () => {
     );
 }
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ isMobile?: boolean }>`
   .theme-switch {
-    --toggle-size: 20px;
+    --toggle-size:${props => props.isMobile ? '14px' : '20px'};
     /* the size is adjusted using font-size,
        this is not transform scale,
        so you can choose any size */

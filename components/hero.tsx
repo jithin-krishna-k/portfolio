@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 import DownloadButton from "./Button/DownloadButton"
 import SocialButton from "./Button/SocialButton"
 import ThemeToggle from "./Button/ThemeToggle"
+import { useMediaQuery } from "@/lib/useMediaQuery"
 
 
 const socialLinks = [
@@ -16,6 +17,7 @@ const socialLinks = [
 ];
 
 export function Hero() {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   const scrollToAbout = () => {
     const element = document.querySelector("#about")
     if (element) {
@@ -69,7 +71,8 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-1 relative overflow-hidden "
+      className={`${isMobile ? 'h-[700px]'  : 'min-h-screen'
+        } flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-1 relative overflow-hidden`}
     >
 
       <div className="absolute top-4 right-4 z-20">
@@ -99,16 +102,23 @@ export function Hero() {
         <div className="absolute bottom-10 left-20 text-xs text-white bg-yellow-500 px-2 py-1 rounded-full float-animation" style={{ animationDelay: "1.8s" }}>
           JavaScript
         </div>
-        <div className="absolute top-60 right-16 text-xs text-white bg-green-600 px-2 py-1 rounded-full float-animation" style={{ animationDelay: "2.2s" }}>
+        <div className={`absolute ${
+    isMobile ? 'top-24 right-5' : 'top-60 right-16'
+  } text-xs text-white bg-green-600 px-2 py-1 rounded-full float-animation`}
+  style={{ animationDelay: "2.2s" }}>
           Node.js
         </div>
         <div className="absolute bottom-28 right-20 text-xs text-white bg-cyan-600 px-2 py-1 rounded-full float-animation" style={{ animationDelay: "2.8s" }}>
           MongoDB
         </div>
-        <div className="absolute top-44 left-40 text-xs text-white bg-sky-500 px-2 py-1 rounded-full float-animation" style={{ animationDelay: "1.6s" }}>
+        <div className={`absolute ${isMobile ? 'top-20 left-10' : 'top-44 left-40'
+          } text-xs text-white bg-sky-500 px-2 py-1 rounded-full float-animation`}
+          style={{ animationDelay: "1.6s" }}>
           React
         </div>
-        <div className="absolute bottom-10 right-4 text-xs text-white bg-black px-2 py-1 rounded-full float-animation" style={{ animationDelay: "3.2s" }}>
+        <div className={`absolute ${isMobile ? 'bottom-5 right-2' : 'bottom-10 right-4'
+          } text-xs text-white bg-black px-2 py-1 rounded-full float-animation`}
+          style={{ animationDelay: "3.2s" }} >
           Next.js
         </div>
 

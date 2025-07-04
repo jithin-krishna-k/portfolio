@@ -17,12 +17,13 @@ export const BackgroundLines = ({
   return (
     <div
       className={cn(
-        "h-[20rem] md:h-screen w-full bg-gray-50 dark:bg-gray-950",
+        "min-h-[20rem] md:min-h-screen w-full bg-gray-50 dark:bg-gray-950 relative",
         className
       )}
     >
+      {/* SVG is full size but constrained by parent */}
       <SVG svgOptions={svgOptions} />
-      {children}
+      <div className="relative z-10">{children}</div>
     </div>
   );
 };
@@ -90,6 +91,7 @@ const SVG = ({
     "#6A286F",
     "#604483",
   ];
+
   return (
     <motion.svg
       viewBox="0 0 1440 900"
@@ -98,13 +100,15 @@ const SVG = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="absolute inset-0 w-full h-full"
+      className="absolute inset-0 w-full h-full max-w-none"
+      preserveAspectRatio="xMidYMid slice"
     >
       {paths.map((path, idx) => (
         <motion.path
+          key={`path-first-${idx}`}
           d={path}
           stroke={colors[idx]}
-          strokeWidth="2.3"
+          strokeWidth="2"
           strokeLinecap="round"
           variants={pathVariants}
           initial="initial"
@@ -117,16 +121,15 @@ const SVG = ({
             delay: Math.floor(Math.random() * 10),
             repeatDelay: Math.floor(Math.random() * 10 + 2),
           }}
-          key={`path-first-${idx}`}
         />
       ))}
-
-      {/* duplicate for more paths */}
+      {/* Duplicate paths for extra layering */}
       {paths.map((path, idx) => (
         <motion.path
+          key={`path-second-${idx}`}
           d={path}
           stroke={colors[idx]}
-          strokeWidth="2.3"
+          strokeWidth="2"
           strokeLinecap="round"
           variants={pathVariants}
           initial="initial"
@@ -139,7 +142,6 @@ const SVG = ({
             delay: Math.floor(Math.random() * 10),
             repeatDelay: Math.floor(Math.random() * 10 + 2),
           }}
-          key={`path-second-${idx}`}
         />
       ))}
     </motion.svg>
