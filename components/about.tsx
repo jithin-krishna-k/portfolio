@@ -5,10 +5,8 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Mail, Download, Code2, Database, User } from "lucide-react"
 import Image from "next/image"
-import { useMediaQuery } from "@/lib/useMediaQuery"
 
 export function About() {
-  const isMobile = useMediaQuery("(max-width: 768px)");
   const scrollToAbout = () => {
     const element = document.querySelector("#contact")
     if (element) {
@@ -84,10 +82,11 @@ export function About() {
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* JavaScript Card */}
                     <div className="flex items-center space-x-3 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-700 hover:shadow-md transition-all duration-300">
-                      <div className={`${isMobile ?"w-8 h-8" :"w-12 h-12"} bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center`}>
-                        <Code2 className="w-6 h-6 text-white" />
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                        <Code2 className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
                       <div>
                         <div className="font-semibold text-blue-700 dark:text-blue-300">JavaScript</div>
@@ -95,9 +94,10 @@ export function About() {
                       </div>
                     </div>
 
+                    {/* React Card */}
                     <div className="flex items-center space-x-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-600 hover:shadow-md transition-all duration-300">
-                      <div className="w-12 h-12 bg-gradient-to-r from-gray-700 to-gray-800 rounded-full flex items-center justify-center">
-                        <Database className="w-6 h-6 text-white" />
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-gray-700 to-gray-800 rounded-full flex items-center justify-center">
+                        <Database className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
                       <div>
                         <div className="font-semibold text-gray-700 dark:text-gray-300">React</div>
@@ -105,6 +105,7 @@ export function About() {
                       </div>
                     </div>
                   </div>
+
 
                   <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     My journey in web development started with a curiosity for how things work behind the scenes. I love

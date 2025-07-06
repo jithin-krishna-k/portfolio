@@ -14,7 +14,7 @@ const SocialButton = ({
     <StyledWrapper>
       <a href={href} target="_blank" rel="noopener noreferrer">
         <button>
-          <Icon className="w-7 h-7" />
+          <Icon className="w-4 h-4 lg:w-8 lg:h-6" />
           <span className="text-xs">{label}</span>
         </button>
       </a>

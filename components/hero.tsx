@@ -71,10 +71,8 @@ export function Hero() {
   return (
     <section
       id="home"
-      className={`${isMobile ? 'h-[950px]' : 'min-h-screen'
-        } flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-1 relative overflow-hidden`}
+      className={`min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-1 relative overflow-hidden`}
     >
-
       <div className="absolute top-4 right-4 z-20">
         <ThemeToggle />
       </div>
@@ -102,10 +100,10 @@ export function Hero() {
         <div className="absolute bottom-10 left-20 text-xs text-white bg-yellow-500 px-2 py-1 rounded-full float-animation" style={{ animationDelay: "1.8s" }}>
           JavaScript
         </div>
-        <div className={`absolute ${isMobile ? 'top-40 right-5' : 'top-60 right-16'
-          } text-xs text-white bg-green-600 px-2 py-1 rounded-full float-animation`}
-          style={{ animationDelay: "2.2s" }}>
-          Node.js
+        <div className={`absolute ${isMobile ? 'top-20 right-10 mt-10' : 'top-24 right-40'
+          } text-xs text-white bg-green-500 px-2 py-1 rounded-full float-animation`}
+          style={{ animationDelay: "2.6s" }}>
+          Node Js
         </div>
         <div className="absolute bottom-28 right-20 text-xs text-white bg-cyan-600 px-2 py-1 rounded-full float-animation" style={{ animationDelay: "2.8s" }}>
           MongoDB
@@ -145,7 +143,7 @@ export function Hero() {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <h1 className="text-4xl sm:text-2xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+          <h1 className="text-3xl lg:text-7xl font-sans mb-6 text-gray-900 dark:text-gray-100">
             Hi, I&apos;m{" "}
             <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent">
               Jithin Krishna K
@@ -154,7 +152,7 @@ export function Hero() {
           <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-6 font-semibold font-mono">
             <span>{typedText}</span>
           </h2>
-          <p className="text-lg sm:text-md text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-md lg:text-3xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-5 leading-relaxed">
             Full-stack web developer focused on creating scalable solutions and intuitive user interfaces 🚀
           </p>
         </motion.div>
@@ -180,7 +178,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex justify-center space-x-6 mb-12"
+          className="flex justify-center space-x-2 mb-12 lg:space-x-8"
         >
           {socialLinks.map((item, idx) => (
             <SocialButton key={idx} icon={item.icon} label={item.label} href={item.href} />
@@ -199,7 +197,9 @@ export function Hero() {
             onClick={scrollToAbout}
             className="hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
           >
-            <ArrowDown className="h-6 w-6" />
+            <div className="bg-blue-600 p-2 rounded-full text-white">
+              <ArrowDown className="h-6 w-6" />
+            </div>
           </Button>
         </motion.div>
       </div>

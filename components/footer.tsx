@@ -43,14 +43,6 @@ export function Footer() {
               />
             ))}
           </div>
-          <div className="text-center">
-            <p className="text-gray-600 mb-10 dark:text-gray-400">
-              © {new Date().getFullYear()} Jithin Krishna K. All rights reserved.
-            </p>
-            {/* <p className="text-sm text-gray-500 dark:text-gray-500 mt-2">
-              Built with Next.js, Tailwind CSS, and deployed on Vercel
-            </p> */}
-          </div>
         </div>
       </div>
     </footer>

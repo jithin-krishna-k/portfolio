@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { Mail, MapPin, Phone, Send, Loader2 } from "lucide-react"
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { submitContactForm } from "@/app/actions"
@@ -97,7 +97,12 @@ export function Contact() {
               </CardHeader>
               <CardContent>
                 {!submitted ? (
-                  <form action={handleSubmit} className="space-y-4">
+                  <form onSubmit={async (e) => {
+                    e.preventDefault()
+                    const form = e.currentTarget
+                    const formData = new FormData(form)
+                    await handleSubmit(formData)
+                  }} className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name" className="text-gray-700 dark:text-gray-300">
@@ -151,9 +156,13 @@ export function Contact() {
                     </div>
                     <Button
                       type="submit"
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                       disabled={isSubmitting}
+                      className={`w-full text-white bg-blue-600 transition-all duration-200 flex items-center justify-center gap-2 ${isSubmitting ? "cursor-not-allowed" : "hover:bg-blue-700"
+                        }`}
                     >
+                      {isSubmitting && (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      )}
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>

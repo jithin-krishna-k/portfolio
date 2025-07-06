@@ -30,7 +30,7 @@ const FooterButton = () => {
         <SocialIconButton icon={<Mail />} name="Mail" link="mailto:you@example.com" socialKey="dribbble" />
         <SocialIconButton icon={<Download />} name="Download" link="/resume.pdf" socialKey="telegram" />
       </ul>
-      <div className="text-center mt-4 pb-10">
+      <div className="text-center mt-8 pb-20">
         <p className="text-gray-600 mb-10 dark:text-gray-400">
           © {new Date().getFullYear()} Jithin Krishna K. All rights reserved.
         </p>
@@ -48,7 +48,7 @@ const StyledWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top:30px
+    margin-top:60px
   }
   .example-2 .icon-content {
     margin: 0 10px;
