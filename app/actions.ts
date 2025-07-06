@@ -63,15 +63,21 @@ const mailOptions = {
     throw new Error("Failed to send email.")
   }
 
-  const telegramMessage = `
-📬 *New Message from Portfolio*
---------------------------
-👤 *Name:* ${name}
-📧 *Email:* ${email}
-📝 *Subject:* ${subject}
+ const telegramMessage = `
+📩 *New Contact Form Submission*
+
+👤 *Name:* \`${name}\`
+📧 *Email:* \`${email}\`
+📝 *Subject:* *${subject}*
+
 💬 *Message:*
+────────────────────────
 ${message}
-  `
+────────────────────────
+
+🕐 _Sent via Jithin’s Portfolio_
+`
+
 
   try {
     await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
