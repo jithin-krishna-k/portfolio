@@ -71,7 +71,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className={`${isMobile ? 'h-[700px]'  : 'min-h-screen'
+      className={`${isMobile ? 'h-[950px]' : 'min-h-screen'
         } flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-1 relative overflow-hidden`}
     >
 
@@ -102,10 +102,9 @@ export function Hero() {
         <div className="absolute bottom-10 left-20 text-xs text-white bg-yellow-500 px-2 py-1 rounded-full float-animation" style={{ animationDelay: "1.8s" }}>
           JavaScript
         </div>
-        <div className={`absolute ${
-    isMobile ? 'top-24 right-5' : 'top-60 right-16'
-  } text-xs text-white bg-green-600 px-2 py-1 rounded-full float-animation`}
-  style={{ animationDelay: "2.2s" }}>
+        <div className={`absolute ${isMobile ? 'top-40 right-5' : 'top-60 right-16'
+          } text-xs text-white bg-green-600 px-2 py-1 rounded-full float-animation`}
+          style={{ animationDelay: "2.2s" }}>
           Node.js
         </div>
         <div className="absolute bottom-28 right-20 text-xs text-white bg-cyan-600 px-2 py-1 rounded-full float-animation" style={{ animationDelay: "2.8s" }}>
@@ -146,7 +145,7 @@ export function Hero() {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+          <h1 className="text-4xl sm:text-2xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-gray-100">
             Hi, I&apos;m{" "}
             <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent">
               Jithin Krishna K
@@ -155,7 +154,7 @@ export function Hero() {
           <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-6 font-semibold font-mono">
             <span>{typedText}</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-md text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
             Full-stack web developer focused on creating scalable solutions and intuitive user interfaces 🚀
           </p>
         </motion.div>

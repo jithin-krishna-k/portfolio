@@ -9,7 +9,7 @@ import { Experience } from "@/components/experience"
 import { Contact } from "@/components/contact"
 import { Navigation } from "@/components/navigation"
 import Loader from "@/components/Button/LoadingButton"
-import { BackgroundLines } from "@/components/ui/background-lines"
+// import { BackgroundLines } from "@/components/ui/background-lines"
 import FooterButton from "@/components/Button/FooterButtons"
 
 export default function Home() {
@@ -42,9 +42,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
-      <BackgroundLines svgOptions={{ duration: 12 }}>
+      {/* <BackgroundLines svgOptions={{ duration: 12 }}> */}
       <Hero />
-      </BackgroundLines>
+      {/* </BackgroundLines> */}
       <About />
       <Skills />
       <Projects />

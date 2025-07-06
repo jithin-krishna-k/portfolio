@@ -30,6 +30,7 @@ const StyledWrapper = styled.div`
   button {
     background: transparent;
     position: relative;
+    margin: 11px 0px;
     padding: 5px 15px;
     display: flex;
     align-items: center;
