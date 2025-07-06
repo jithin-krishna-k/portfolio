@@ -55,7 +55,7 @@ export function Navigation() {
     <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 
       bg-white/20 dark:bg-gray-800/30 backdrop-blur-lg 
       border border-white/30 dark:border-gray-700 
-      rounded-full shadow-lg z-50 px-4 py-1 w-max max-w-[90vw]">
+      rounded-full shadow-lg z-50 px-4 py-3 w-max max-w-[90vw]">
       <div className="flex items-center overflow-x-auto scrollbar-hide space-x-1 sm:space-x-2 md:space-x-4">
         {navItems.map((item) => (
           <button
