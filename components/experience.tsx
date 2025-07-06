@@ -6,36 +6,37 @@ import { motion } from "framer-motion"
 import { Briefcase } from "lucide-react"
 
 export function Experience() {
-  const experiences = [
-    {
-      title: "Full Stack Developer",
-      company: "TechStart Solutions",
-      period: "Jan 2023 - Present",
-      description:
-        "Developed and maintained multiple web applications using MERN stack. Collaborated with cross-functional teams to deliver high-quality software solutions.",
-      responsibilities: [
-        "Built responsive web applications using React and Node.js",
-        "Designed and implemented RESTful APIs",
-        "Optimized database queries and improved application performance by 40%",
-        "Mentored junior developers and conducted code reviews",
-      ],
-      technologies: ["React", "Node.js", "MongoDB", "Express", "AWS"],
-    },
-    {
-      title: "Junior Web Developer",
-      company: "Digital Innovations Inc",
-      period: "Jun 2022 - Dec 2022",
-      description:
-        "Started my professional journey as a junior developer, focusing on frontend development and learning backend technologies.",
-      responsibilities: [
-        "Developed user interfaces using React and modern CSS frameworks",
-        "Collaborated with designers to implement pixel-perfect designs",
-        "Participated in agile development processes",
-        "Contributed to open-source projects and internal tools",
-      ],
-      technologies: ["React", "JavaScript", "CSS3", "Git", "Figma"],
-    },
-  ]
+const experiences = [
+  {
+    title: "Full Stack Developer",
+    company: "Inloops Innovations",
+    period: "Jan 2024 – Present",
+    description:
+      "Working at a fast-paced product-based startup, contributing to the development of dynamic booking and scheduling platforms using scalable full-stack technologies.",
+    responsibilities: [
+      "Architected and developed real-time booking systems supporting multiple services and resource combinations",
+      "Built reusable React components and dynamic slot selectors with time-based validation",
+      "Integrated authentication, role-based access, and API security in Next.js",
+      "Collaborated on HTMX-powered micro frontends for lightweight interactive features",
+      "Optimized MongoDB queries and implemented message queues using RabbitMQ for background jobs",
+    ],
+    technologies: ["Next.js", "React", "Node.js", "MongoDB", "HTMX", "Tailwind CSS", "RabbitMQ"],
+  },
+  {
+    title: "Junior Full Stack Developer",
+    company: "DevHouse",
+    period: "Jul 2023 – Dec 2023",
+    description:
+      "Joined as an intern and transitioned to a junior full-stack role, contributing to the development and maintenance of queue and booking management systems.",
+    responsibilities: [
+      "Developed REST APIs and backend logic for queue and resource management modules",
+      "Implemented user-facing features using React and integrated real-time status updates",
+      "Contributed to internal tools for slot validation, availability checks, and admin dashboards",
+      "Participated in code reviews, team planning, and agile development cycles",
+    ],
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Git"],
+  },
+];
 
   return (
     <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-950">
@@ -59,7 +60,7 @@ export function Experience() {
         <div className="space-y-6">
           {experiences.map((experience, index) => (
             <motion.div
-              key={experience.title}
+              key={experience.title + experience.company}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -117,5 +118,6 @@ export function Experience() {
         </div>
       </div>
     </section>
-  )
+  );
 }
+

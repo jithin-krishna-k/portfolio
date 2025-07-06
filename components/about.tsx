@@ -86,7 +86,7 @@ export function About() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="flex items-center space-x-3 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-700 hover:shadow-md transition-all duration-300">
-                      <div className={`${isMobile ?"w-10 h-10" :"w-12 h-12"} bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center`}>
+                      <div className={`${isMobile ?"w-8 h-8" :"w-12 h-12"} bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center`}>
                         <Code2 className="w-6 h-6 text-white" />
                       </div>
                       <div>
